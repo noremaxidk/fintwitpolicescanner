@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 from sheet_reader import fintwit_police_scanner
 
-#locates chromedriver.exe on the computer and opens the application
+#locates chromedriver.exe on the computer and opens the application (you have to download the chromedriver yourself and specify the path)
 driver = webdriver.Chrome(executable_path=r'C:path\to\chomedriver.exe')
 
 #sends a request to open this URL on the browser
