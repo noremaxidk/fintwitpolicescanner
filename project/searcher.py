@@ -20,7 +20,7 @@ def fintwitPoliceScanner():
     file = askopenfilename(title = "Fintwit Police Scanner", filetypes = (("CSV Files","*.csv"),))
     fintwit_police_scanner = pd.read_csv(file)
 
-    driver = webdriver.Chrome(executable_path=r'C:\Users\bigsk\Desktop\chromedriver.exe')
+    driver = webdriver.Chrome(executable_path=r'C:\Users\\Desktop\chromedriver.exe')
     driver.get('https://www.sec.gov/edgar/search/')
     time.sleep(0.1)
 
