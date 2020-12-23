@@ -5,16 +5,6 @@ from selenium.webdriver.common.keys import Keys
 import time
 import pandas as pd
 
-root = Tk()
-root.geometry("500x500")
-root.configure(background = "black")
-root.title = ("FinTwit Police Scanner")
-
-def buttonwidget():
-    upload_button = Button(root, text="Upload", command=lambda:fintwitPoliceScanner())
-    upload_button.pack(side=TOP, pady=10)
-
-buttonwidget()
 
 def fintwitPoliceScanner():
     file = askopenfilename(title = "Fintwit Police Scanner", filetypes = (("CSV Files","*.csv"),))
@@ -60,7 +50,7 @@ def fintwitPoliceScanner():
         time.sleep(0.1)
 
         if check_for_no_search_pls.text == "No results found for your search!":
-            pass
+            print(column['Name'], "NULL")
 
         else:
             company_name = driver.find_element_by_xpath("//*[@id='hits']/table/tbody/tr[1]/td[4]")
@@ -68,6 +58,13 @@ def fintwitPoliceScanner():
 
     time.sleep(0.5)
 
-fintwitPoliceScanner()
+    print("Done")
+
+root = Tk()
+root.geometry("500x500")
+root.configure(background = "black")
+root.title("Noremax Scumbag Scanner")
+upload_button = Button(root, text="Upload your .csv file & Run", fg = "white", command=lambda:fintwitPoliceScanner(), background = "black", width = 30)
+upload_button.pack(side = BOTTOM, pady= 10)
 
 root.mainloop()
